@@ -38,5 +38,9 @@ app.get('/', (req, res) => {
 });
 
 const userRoutes = require('./routes/userRoutes.js');
+const cardRoutes = require('./routes/cardRoutes.js');
+const categoryRoutes = require('./routes/categoryRoutes.js');
 
 app.use('/api/users', userRoutes);
+app.use('/api/cards', cardRoutes);
+app.use('/api/categories', categoryRoutes);
