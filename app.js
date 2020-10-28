@@ -32,3 +32,11 @@ const server = http.createServer(app);
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}`);
 });
+
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
+
+const userRoutes = require('./routes/userRoutes.js');
+
+app.use('/api/users', userRoutes);
