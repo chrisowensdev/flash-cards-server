@@ -18,4 +18,10 @@ router.get('/category/:id', async (req, res) => {
     res.json(cardsByCategory);
 });
 
+router.post('/', async (req, res) => {
+    console.log(req);
+    const card = await Card.create(req.body);
+    res.json(card);
+});
+
 module.exports = router;

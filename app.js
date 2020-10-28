@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require('http');
+const bodyParser = require('body-parser');
 
 const hostname = '127.0.0.1';
 const port = 3333;
@@ -24,6 +25,9 @@ const corsOptions = {
 };
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
 
 app.use(cors(corsOptions));
 
