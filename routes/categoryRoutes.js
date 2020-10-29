@@ -13,4 +13,9 @@ router.get('/:id', async (req, res) => {
     res.json(category);
 });
 
+router.post('/', async (req, res) => {
+    const category = await Category.create(req.body);
+    res.json(category);
+});
+
 module.exports = router;
