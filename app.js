@@ -33,8 +33,8 @@ app.use(cors(corsOptions));
 
 const server = http.createServer(app);
 
-server.listen(PORT, hostname, () => {
-    console.log(`Server running at http://${hostname}:${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server running at ${PORT}`);
 });
 
 app.get('/', (req, res) => {
