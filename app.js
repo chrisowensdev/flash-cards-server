@@ -4,7 +4,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 
 const hostname = '127.0.0.1';
-const port = 3333;
+const PORT = process.env.PORT || 3333;
 
 const express = require('express');
 const dotenv = require('dotenv');
@@ -34,7 +34,7 @@ app.use(cors(corsOptions));
 const server = http.createServer(app);
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}`);
+    console.log(`Server running at http://${hostname}:${PORT}`);
 });
 
 app.get('/', (req, res) => {
