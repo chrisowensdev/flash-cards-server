@@ -18,4 +18,12 @@ router.post('/', async (req, res) => {
     res.json(category);
 });
 
+router.delete('/:id', async (req, res) => {
+    const category = await Category.findById(req.params.id);
+    category.remove();
+    res.status(200).json({
+        success: true,
+    });
+});
+
 module.exports = router;
